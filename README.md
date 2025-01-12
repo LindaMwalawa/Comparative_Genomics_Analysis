@@ -1,24 +1,17 @@
-# De novo Sequence Assembly Using Velvet
-De novo sequencing refers to sequencing novel genomes where there are no reference sequences available for alignment. Sequence reads are then assembled into contigs, with the coverage quality of de novo sequence data depending on the size and continuity of the contigs (ie, the number of gaps in the data).
-Velvet is one of several de novo assemblers designed to process short-read datasets, such as Illumina reads, utilizing de Bruijn graphs as the foundation for its assembly method.
+# Evolutionary Analysis of ACE2 gene.
+This involved the following steps:
 
-## How it works
-De novo genome assembly involves the following main steps:
+## De novo Assembly of ACE2 using velvet
 
-1. Fragmentation of DNA:
-   - The genome is fragmented into millions of small pieces, which are sequenced using platforms like Illumina or PacBio to produce short reads (tens to hundreds of base pairs long) or 
-    long reads (up to several kilobases for some technologies).
+1. Qaulity control using Fastqc
+2. Trimming adapater and removing low quality bases (Phred >33)using Trimmomatic
+3. Assembly of the Qc reads using velveth and velvetg
+4. Validation of consensus contigs in NCBI
 
-2. Read Overlap Identification:
-   - The velvet assembler identifies overlaps between sequencing reads by constructing a de Bruijn graph, where reads are broken into smaller units (k-mers) to find 
-    connections.
-
-3. Assembly of Contigs and Contigs formation:
-   - Overlapping reads are merged into longer continuous sequences called contigs which are ordered and oriented into larger structures called scaffolds using information from paired- 
-    end or mate-pair reads.
-
-4. Gap Filling and Polishing:
-   - Gaps in scaffolds are filled where possible, and assembly errors are corrected using additional sequencing data or computational tools.
-
-## Sequence assembly workflow
-For this exercise, paired end reads from an unidentified organism were downloaded as a zipped folder from an open source and quality control done using Trimmomatic to remove bases of low quality (phred score < 33). By default, Velvet comes with a maximum k-mer length of 31 hardcoded into the Makefile, however for this exercise, this value was adjusted to 71. Two key programs, velveth and velvetg are used in the velvet pipeline for genome assembly, each serving distinct purposes. Velveth is responsible for preparing the dataset for assembly by creating hash tables and building the de Bruijn graph while velvetg takes the output from velveth and performs the actual assembly by manipulating the de Bruijn graph. The output data was then blasted in the BLASTN tool in NCBI and the predicted result of Myotis brandtii angiotensin I converting enzyme 2 (ACE2) was obtained.
+## Evolutionary analysis of assembled ACE2 contigs in Myotis bats species 
+1. Blast the ACE2 contigs ....
+2. Download ... and combine with ACE2 contig
+3. Alignment
+4. visualization using Aliview
+5. Phylogenetic tree inference analysis using IQ-tree
+   
