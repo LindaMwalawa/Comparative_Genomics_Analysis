@@ -1,0 +1,61 @@
+# Creating a working directory
+
+cd Desktop 
+mkdir BIOL40850
+cd BIOL40850
+
+# Dowloading and unzipping zipped folder with raw sequences
+
+wget https://www.dropbox.com/s/9r9xdano1nndbfa/Reads.zip
+unzip Reads.zip
+
+
+# Visualization and QC
+
+fastqc Reads Reads_1.fq
+fastqc Reads_2.fq
+head Reads_1.fq/Reads_2.fq
+
+# Installing and Running Trimmomatic (Installing dependencies for Trimmomatic)
+
+sudo apt install ant
+
+# Cloning the Trimmomatic repository
+
+git clone https://github.com/usadellab/Trimmomatic.git
+cd Trimmomatic
+
+# Modify version number:
+
+sed -ie "s/1.5/1.6/g" build.xml
+
+# Compiling Trimmomatic:
+
+ant
+
+# Running Trimmomatic:
+
+java -jar trimmomatic-0.40-rc1.jar PE -phred33 -trimlog log.txt Reads_1.fq Reads_2.fq \
+read1out_paired.fa read1out_unpaired.fa read2out_paired.fa read2out_unpaired.fa \
+LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+
+# Sequence Assembly with Velvet (Clone the Velvet repository):
+
+git clone https://github.com/dzerbino/velvet.git
+cd velvet
+
+# Modifying maximum k-mer length:
+
+sed -ie 's/=31/=71/g' Makefile
+
+# Compiling Velvet:
+make
+
+# Running Velvet:
+
+./velveth Assemblyfiles 51 -shortPaired -fastq -separate read1out_paired.fa read2out_paired.fa
+./velvetg ./Assemblyfiles
+
+# Viewing assembled sequences:
+cat ./Assemblyfiles/contigs.fa
+
