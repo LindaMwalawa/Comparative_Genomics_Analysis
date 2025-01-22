@@ -1,0 +1,62 @@
+# Combining and Aligning Sequences
+
+## Download additional sequences: wget https://www.dropbox.com/s/9jssqegt5ml18nh/ACE2_seq.fa
+
+## Combine sequences:
+cat new_seq.fa ACE2_seq.fa >>combined.fa
+
+## Count sequences:
+
+grep -c ">" combined.fa
+
+# Downloading Genome Sequence Data from NCBI and Combining with the combined.fa File
+
+https://www.ncbi.nlm.nih.gov/genome/
+
+1. Entered "Homo sapiens transcripts" in the search bar
+2. Located the transcript data file in the results (.fa.gz format).
+3. Copied Link Address
+4. Downloaded the Data Using wget in terminal
+
+wget https://example.ncbi.nlm.nih.gov/transcripts.fa.gz
+
+# Uncompressing the Downloaded File
+
+gunzip transcripts.fa.gz
+
+# Extracting the Target Gene
+
+grep "ACE2" transcripts.fa
+
+# Extracting the gene sequence, including the FASTA header and its sequence. 
+
+grep "ACE2, transcript variant 1" transcripts.fa -A42 >> combined.fa
+
+
+# Verifying the combination by checking the contents of the combined.fa file:
+
+grep -c ">" combined.fa
+
+
+# Making a multiple sequence alignment
+ Downloaded Clustal Omega using wget http://www.clustal.org/omega/clustal-omega-1.2.3-macosx
+ Renamed the Downloaded File for convenience:
+ mv clustalo-1.2.4-Ubuntu-x86_64 clustalo or mv clustal-omega-1.2.3-macosx clustalo
+
+# Making the File Executable
+
+chmod u+x clustalo
+
+# Performing the Alignment
+
+./clustalo -i combined.fa -o ACE2.aln
+
+-i combined.fa: Specifies the input file containing sequences to align.
+-o ACE2.aln: Specifies the output file for the alignment results.
+
+# Visualize the Alignment
+
+Downloaded AliView: https://ormbunkar.se/aliview/
+
+Open Aliview -> File -> Open -> Select File (ACE2.aln)
+
