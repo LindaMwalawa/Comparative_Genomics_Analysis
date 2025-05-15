@@ -1,4 +1,4 @@
-# De Novo Assembly of ACE2 Gene in Bat species
+# De Novo Genome Assembly of Myotis Bat ACE2 Gene
 The workflow involved processing paired end reads sequenced from an unknown bat species. 
 
 ## Objective:
