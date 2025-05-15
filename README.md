@@ -10,7 +10,7 @@ FastQC
 Trimmomatic
 Velvet (velveth & velvetg)
 NCBI BLAST
-v
+
 ## De novo Assembly Workflow
 
 1. Qaulity control of paired end reads using Fastqc
