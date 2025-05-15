@@ -59,3 +59,5 @@ make
 # Viewing assembled sequences:
 cat ./Assemblyfiles/contigs.fa
 
+#Validating Assembled sequence: pasted the sequence in BLAST and obtained the Myotis myotis bat as top hit
+#Pasted the sequence from NCBI into  a text editor
