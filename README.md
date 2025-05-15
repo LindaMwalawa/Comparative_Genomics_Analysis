@@ -1,11 +1,20 @@
 # Comparative ACE2 Analysis: Investigating Viral Binding Sites Across Species 
 
-The workflow involved the following
-1. Quality Control of raw reads
-2. De novo genome assembly
-3. Validation of assembled sequence
-4. Multiple sequence alignment
-5. Determination of evolving sites across species
+## The workflow involved the following
+1. Download raw sequencing reads
+2. Quality assessment of reads
+3. Trim low-quality sequences
+4. Perform de novo genome assembly
+5. Validate assembly in BLAST
+6. Download ACE2 sequences from other species
+7. Append the top hit from NCBI to multiple sequences
+8. Align sequences
+9. Generate a phylogenetic tree
+10. Visualize the tree
+11. Detect evolving sites
+14. Compare with viral binding residues
+15. Assess protein 3D structures
+
 
 ## Objective:
 
@@ -21,19 +30,4 @@ To investigate evolving sites within the ACE2 gene across different species, par
 7. IQTREE
 8. iTOL
 9. PDB
-
-## De novo Assembly Workflow
-1. Download raw sequencing reads
-2. Quality assessment of reads
-3. Trim low-quality sequences
-4. Perform de novo genome assembly
-5. Validate assembly in BLAST
-6. Download ACE2 sequences from other species
-7. Append the top hit from NCBI to multiple sequences
-8. Align sequences
-9. Generate a phylogenetic tree
-10. Visualize the tree
-11. Detect evolving sites
-14. Compare with viral binding residues
-15. Assess protein 3D structures
 
