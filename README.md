@@ -5,6 +5,12 @@ The workflow involved processing paired end reads sequenced from an unknown bat 
 
 To determine the most likely gene or protein encoded by the assembled sequences.
 
+## Tools Used
+FastQC
+Trimmomatic
+Velvet (velveth & velvetg)
+NCBI BLAST
+v
 ## De novo Assembly Workflow
 
 1. Qaulity control of paired end reads using Fastqc
