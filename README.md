@@ -1,6 +1,22 @@
 # Comparative ACE2 Analysis: Investigating Viral Binding Sites Across Species 
 
-## The workflow involved the following
+## Project Overview 
+This project investigated the evolutionary variation of the ACE2 receptor gene across mammals, with a specific focus on amino acid residues involved in binding to the SARS-CoV-2 spike (S) protein. Given that ACE2 mediates viral entry via interactions with the spike protein and facilitates membrane fusion and cell infection, the aim was to explore how ACE2 sequence variation may influence host susceptibility and viral tropism
+
+### Project Objectives
+1. Perform de novo genome assembly of the ACE2 gene sequence obtained from a illumina sequencing machine
+2. Validate the assembled sequences using BLAST against reference databases.
+3. Perform multiple sequence alignment
+4. Construct a phylogenetic tree
+5. Investigate evolutionary changes across organisms
+
+## Why ACE2?
+ACE2 is a key entry receptor for coronaviruses, and its cross-species variation may explain host susceptibility.
+
+## What’s in this repo?
+A brief outline of data, tools used, analyses (e.g. alignments, phylogeny)
+
+## Workflow
 1. Download raw sequencing reads
 2. Quality assessment of reads
 3. Trim low-quality sequences
@@ -14,11 +30,6 @@
 11. Detect evolving sites
 14. Compare with viral binding residues
 15. Assess protein 3D structures
-
-
-## Objective:
-
-To investigate evolving sites within the ACE2 gene across different species, particularly those affecting viral binding to SARS-CoV and SARS-CoV-2
 
 ## Tools Used
 1. FastQC
