@@ -3,6 +3,9 @@
 ## Project Overview 
 This project investigated the evolutionary variation of the ACE2 receptor gene across mammals, with a specific focus on amino acid residues involved in binding to the SARS-CoV-2 spike (S) protein. Given that ACE2 mediates viral entry via interactions with the spike protein and facilitates membrane fusion and cell infection, the aim was to explore how ACE2 sequence variation may influence host susceptibility and viral tropism
 
+
+![ACE2 and COVID-19](images/ACE2_pathway.png)
+
 ### Project Objectives
 1. Perform de novo genome assembly of the ACE2 gene sequence obtained from a illumina sequencing machine
 2. Validate the assembled sequences using BLAST against reference databases.
